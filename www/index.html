@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/highcharts/adapters/standalone-framework.js"></script>
+    <script src="lib/highcharts/highcharts.js"></script>
+    <script src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content ng-controller="HomeController as home">
+        <div class="row">
+          <div class="col">
+            <button type="button" name="button" class="button button-calm" ng-click="home.calculate()">Generate</button>
+            <!-- <div class="row">
+              <div class="col">
+                <h4>Velocity</h4>
+                <table class="col">
+                  <tr class="row">
+                    <td class="col">
+                      X
+                    </td>
+                    <td class="col">
+                      Y
+                    </td>
+                  </tr>
+                  <tr ng-repeat="item in home.velocity" class="row">
+                    <td class="col">
+                      {{item.x}}
+                    </td>
+                    <td class="col">
+                      {{item.y}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col">
+                <h4>Particle</h4>
+                <table>
+                  <tr class="row">
+                    <th class="col">
+                      Velocity(X,Y)
+                    </th>
+                    <th class="col">
+                      Fitness
+                    </th>
+                    <th>
+                      Lbest
+                    </th>
+                    <th>
+                      Present
+                    </th>
+                  </tr>
+                  <tr ng-repeat="item in home.particle" class="row">
+                    <td class="col">
+                      {{"(" + item.velocity.x + "," + item.velocity.y + ")"}}
+                    </td>
+                    <td class="col">
+                      {{item.fitness}}
+                    </td>
+                    <td class="col">
+                      {{item.lbest}}
+                    </td>
+                    <td class="col">
+                      {{item.present}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+            </div> -->
+
+          </div>
+        </div>
+        <highchart config="chart"></highchart>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
