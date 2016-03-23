@@ -104,14 +104,15 @@ angular.module('starter', ['ionic', 'highcharts-ng'])
       // console.log("vm.particle", vm.particle);
       // console.log("gbest", gbest);
     }
-    console.log("Global List:", vm.globalPlotter);
-    $scope.chart.series[0].data = [];
+    // console.log("Global List:", vm.globalPlotter);
+    $scope.chart.series[1].data = [];
     for (var i = 0; i < vm.globalPlotter.length; i++) {
       vm.globalPlotter[i] = vm.globalPlotter[i] / 10000;
-      $scope.chart.series[0].data.push(vm.particle[i].fitness / 100);
+      $scope.chart.series[1].data.push(vm.particle[i].fitness / 100);
+      console.log("Divident", vm.particle[i].fitness / 100);
     }
-    console.log("Global List After:", vm.globalPlotter);
-    // $scope.chart.series[0].data = vm.globalPlotter;
+    // console.log("Global List After:", vm.globalPlotter);
+    $scope.chart.series[0].data = vm.globalPlotter;
   }
 
   $scope.chart = {
@@ -128,10 +129,10 @@ angular.module('starter', ['ionic', 'highcharts-ng'])
     },
     yAxis: {
       title: "Global Maxima",
-      min: 10,
-      max: 20000,
-      tickPixelInterval: 80,
-      tickLength: 1
+      min: 0,
+      max: 100000,
+      tickPixelInterval: 30,
+      tickLength: 0
     },
     xAxis: {
       type: 'linear',
@@ -141,9 +142,12 @@ angular.module('starter', ['ionic', 'highcharts-ng'])
       tickPixelInterval: 100
     },
     series: [{
-      name: "FPS Best",
+      name: "Global Best",
       data: vm.globalPlotter
-      // data: [15,26,34,47,54,6,73,8,96,0,233,32,32,31,3]
+        // data: [15,26,34,47,54,6,73,8,96,0,233,32,32,31,3]
+    }, {
+      name: "Gene Fitness",
+      data: []
     }]
   };
 

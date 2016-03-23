@@ -26,74 +26,17 @@
   <body ng-app="starter">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+      <ion-header-bar class="bar bar-royal">
+        <h1 class="title">Computing Intelligence</h1>
       </ion-header-bar>
       <ion-content ng-controller="HomeController as home">
         <div class="row">
-          <div class="col">
-            <button type="button" name="button" class="button button-calm" ng-click="home.calculate()">Generate</button>
-            <!-- <div class="row">
-              <div class="col">
-                <h4>Velocity</h4>
-                <table class="col">
-                  <tr class="row">
-                    <td class="col">
-                      X
-                    </td>
-                    <td class="col">
-                      Y
-                    </td>
-                  </tr>
-                  <tr ng-repeat="item in home.velocity" class="row">
-                    <td class="col">
-                      {{item.x}}
-                    </td>
-                    <td class="col">
-                      {{item.y}}
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <div class="col">
-                <h4>Particle</h4>
-                <table>
-                  <tr class="row">
-                    <th class="col">
-                      Velocity(X,Y)
-                    </th>
-                    <th class="col">
-                      Fitness
-                    </th>
-                    <th>
-                      Lbest
-                    </th>
-                    <th>
-                      Present
-                    </th>
-                  </tr>
-                  <tr ng-repeat="item in home.particle" class="row">
-                    <td class="col">
-                      {{"(" + item.velocity.x + "," + item.velocity.y + ")"}}
-                    </td>
-                    <td class="col">
-                      {{item.fitness}}
-                    </td>
-                    <td class="col">
-                      {{item.lbest}}
-                    </td>
-                    <td class="col">
-                      {{item.present}}
-                    </td>
-                  </tr>
-                </table>
-              </div>
-
-            </div> -->
-
+          <div class="col text-center">
+            <button type="button" name="button" class="button button-assertive" ng-click="home.calculate()">Generate New Sample</button>
+            <highchart config="chart"></highchart>
           </div>
         </div>
-        <highchart config="chart"></highchart>
+
       </ion-content>
     </ion-pane>
   </body>
